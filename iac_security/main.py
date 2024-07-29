@@ -35,4 +35,4 @@ def execute():
         print("No code smells detected")
 
 
-cProfile.run('execute')
+cProfile.run('execute()')
