@@ -3,11 +3,13 @@ from smells_detection import empty_password
 from smells_detection import admin_by_default
 from smells_detection import empty_default, harcoded_password, inconsistent_naming_convention, invalid_port_range
 from smells_detection import long_statement, unrestricted_ip_address
+import cProfile
 
-if __name__ == '__main__':
+
+def execute():
     # scan folder
     tf_file_paths = common.list_file_paths_in_all_level_of_directory(directory=".",
-                                                                    filetype=".tf")
+                                                                     filetype=".tf")
 
     no_code_smell_flag = 0
 
@@ -32,3 +34,5 @@ if __name__ == '__main__':
     if no_code_smell_flag == 0:
         print("No code smells detected")
 
+
+cProfile.run('execute')
